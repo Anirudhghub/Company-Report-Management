@@ -217,10 +217,10 @@ public class SignIn extends JFrame {
 		btnReset.setBounds(191, 288, 89, 23);
 		panel.add(btnReset);
 
-		JLabel label = new JLabel("Report Entry");
-		label.setFont(new Font("Arial", Font.BOLD, 20));
-		label.setBounds(90, 14, 154, 30);
-		panel.add(label);
+		JLabel lblSigninPage = new JLabel("SignIn Page");
+		lblSigninPage.setFont(new Font("Arial", Font.BOLD, 20));
+		lblSigninPage.setBounds(126, 14, 154, 30);
+		panel.add(lblSigninPage);
 
 		JLabel lblIfYouAre = new JLabel("ManagerID(Manager's employeeID) :");
 		lblIfYouAre.setBounds(29, 230, 177, 23);

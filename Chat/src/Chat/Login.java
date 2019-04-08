@@ -155,6 +155,11 @@ public class Login extends JFrame {
 		});
 		btnLogIn.setBounds(93, 189, 89, 23);
 		contentPane.add(btnLogIn);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\my pc\\Downloads\\short.jpg"));
+		lblNewLabel.setBounds(0, 0, 434, 262);
+		contentPane.add(lblNewLabel);
 
 		
 	}

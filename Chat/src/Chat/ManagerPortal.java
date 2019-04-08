@@ -36,6 +36,7 @@ public class ManagerPortal extends JFrame {
 	JComboBox comboBox;
 	static JLabel lblName,lblPost,lblDatre;
 	private JTable table;
+	private JLabel lblNewLabel;
 	
 	/**
 	 * Launch the application.
@@ -207,6 +208,11 @@ public class ManagerPortal extends JFrame {
 		lblDatre = new JLabel("Date");
 		lblDatre.setBounds(352, 22, 115, 14);
 		contentPane.add(lblDatre);
+		
+		lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\my pc\\Downloads\\thumb-1920-77522.jpg"));
+		lblNewLabel.setBounds(0, 0, 1248, 692);
+		contentPane.add(lblNewLabel);
 		
 		
 		

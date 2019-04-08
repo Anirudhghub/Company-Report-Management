@@ -207,6 +207,11 @@ public class EditAccount extends JFrame {
 		});
 		btnSearch.setBounds(117, 288, 89, 23);
 		panel.add(btnSearch);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\my pc\\Downloads\\short.jpg"));
+		lblNewLabel.setBounds(0, 0, 424, 322);
+		panel.add(lblNewLabel);
 	
 	}
 }

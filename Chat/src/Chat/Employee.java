@@ -90,7 +90,7 @@ public class Employee extends JFrame {
 	public Employee(String username,String employee_id,String date) {
 		setTitle("Employee Account");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 748, 406);
+		setBounds(100, 100, 688, 406);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -356,7 +356,7 @@ public class Employee extends JFrame {
 		btnEditAccountDetails.setBounds(5, 316, 140, 23);
 		contentPane.add(btnEditAccountDetails);
 		
-		lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1 = new JLabel("date");
 		lblNewLabel_1.setBounds(351, 106, 160, 14);
 		contentPane.add(lblNewLabel_1);
 		
@@ -366,6 +366,13 @@ public class Employee extends JFrame {
 		lblArea.setFont(new Font("Arial", Font.BOLD, 14));
 		lblArea.setBounds(261, 60, 59, 14);
 		contentPane.add(lblArea);
+		
+		JLabel lblNewLabel_2 = new JLabel("New label");
+		lblNewLabel_2.setIcon(new ImageIcon("C:\\Users\\my pc\\Downloads\\thumb-1920-77522.jpg"));
+		lblNewLabel_2.setBounds(-11, 0, 965, 1046);
+		contentPane.add(lblNewLabel_2);
+		
+		
 		
 		
 	}
