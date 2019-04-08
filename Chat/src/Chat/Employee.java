@@ -27,6 +27,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
+import javax.swing.JComboBox;
 
 public class Employee extends JFrame {
 
@@ -61,10 +62,11 @@ public class Employee extends JFrame {
 	private JLabel lblGm_3;
 	private JLabel label_10;
 	private JLabel lblKg;
-	static JLabel lblNewLabel,lblPost,lblName;
+	static JLabel lblNewLabel,lblPost,lblName,lblNewLabel_1;
 	java.sql.Connection connn;
 	PreparedStatement ps;
 	private JButton btnEditAccountDetails;
+	
 
 	/**
 	 * Launch the application.
@@ -85,7 +87,7 @@ public class Employee extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Employee(String username,String employee_id) {
+	public Employee(String username,String employee_id,String date) {
 		setTitle("Employee Account");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 748, 406);
@@ -111,6 +113,17 @@ public class Employee extends JFrame {
 
 		JLabel lblNewLabel_7 = new JLabel("Custard Powder");
 		lblNewLabel_7.setBounds(543, 150, 117, 14);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.addItem("Area 1");
+		comboBox.addItem("Area 2");
+		comboBox.addItem("Area 3");
+		comboBox.addItem("Area 4");
+		comboBox.addItem("Area 5");
+		comboBox.insertItemAt("(Select)", 0);
+		comboBox.setSelectedIndex(0);
+		comboBox.setBounds(345, 54, 148, 20);
+		contentPane.add(comboBox);
 
 		JLabel label = new JLabel("");
 		label.setBounds(15, 131, 0, 0);
@@ -125,7 +138,7 @@ public class Employee extends JFrame {
 				try {
 					Class.forName("com.mysql.jdbc.Driver");
 					connn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chat", "root", "rat");
-					String query = "insert into "+username+" values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
+					String query = "insert into "+username+" values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
 					ps = connn.prepareStatement(query);
 					ps.setString(1, textField.getText());
 					ps.setString(2, textField_1.getText());
@@ -143,6 +156,8 @@ public class Employee extends JFrame {
 					ps.setString(14, textField_13.getText());
 					ps.setString(15, textField_14.getText());
 					ps.setString(16, textArea.getText());
+					ps.setString(17, date);
+					ps.setString(18, (String) comboBox.getSelectedItem());
 					ps.execute();
 					ps.close();
 					connn.close();
@@ -340,6 +355,17 @@ public class Employee extends JFrame {
 		});
 		btnEditAccountDetails.setBounds(5, 316, 140, 23);
 		contentPane.add(btnEditAccountDetails);
+		
+		lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setBounds(351, 106, 160, 14);
+		contentPane.add(lblNewLabel_1);
+		
+		
+		
+		JLabel lblArea = new JLabel("AREA : ");
+		lblArea.setFont(new Font("Arial", Font.BOLD, 14));
+		lblArea.setBounds(261, 60, 59, 14);
+		contentPane.add(lblArea);
 		
 		
 	}

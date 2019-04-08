@@ -17,6 +17,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Vector;
 import java.awt.event.ActionEvent;
 import javax.swing.JPasswordField;
@@ -28,7 +30,7 @@ public class Login extends JFrame {
 	private JTextField textField;
 	Connection conn;
 	private JPasswordField passwordField;
-	static String username,employee_id;
+	static String username,employee_id,date;
 	
 	/**
 	 * Launch the application.
@@ -58,7 +60,11 @@ public class Login extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-
+		
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");  
+		   LocalDateTime now = LocalDateTime.now();  
+		   date=dtf.format(now);
+		   
 		JLabel lblUsername = new JLabel("Username");
 		lblUsername.setFont(new Font("Arial", Font.BOLD, 16));
 		lblUsername.setBounds(57, 91, 80, 14);
@@ -128,13 +134,15 @@ public class Login extends JFrame {
 					obj.setLocationRelativeTo(null);
 					ManagerPortal.lblName.setText("Welcome "+username);
 					ManagerPortal.lblPost.setText("Employee ID : "+employee_id);
+					ManagerPortal.lblDatre.setText("DATE : "+date);
 				}
 				if(post.equalsIgnoreCase("employee")) 
 				{
-					Employee obj1=new Employee(username,employee_id);
+					Employee obj1=new Employee(username,employee_id,date);
 					obj1.setVisible(true);
 					Employee.lblName.setText("Welcome "+username);
 					Employee.lblPost.setText("Employee ID : "+employee_id);
+					Employee.lblNewLabel_1.setText("DATE : "+date);
 				}ps.close();con.close();
 					}
 					
